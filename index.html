@@ -1,145 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-  <title>Каталог шкарпеток</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you be my valentine?</title>
   <style>
     body {
+      background-color: #FFC0CB;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background: linear-gradient(to bottom, #007bff, #0056b3);
+      padding: 0;
     }
-
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
     h1 {
-      text-align: center;
-      color: #fff;
+      color: #800080;
+      font-size: 48px;
+      margin-top: 0;
     }
-
-    .section-buttons {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .section-buttons button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .section-buttons button:hover {
-      background-color: #0056b3;
-    }
-
-    .section {
-      display: none;
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 4px;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    .section h2 {
-      font-size: 20px;
+    
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
       margin-top: 20px;
     }
-
-     .section ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
+    
+    .button {
+      background-color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-size: 18px;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
     }
-
-    .section ul li {
-     width: 10%;
-      margin-bottom: 20px;
-      margin-left: 20px;
+    
+    .button:hover {
+      background-color: #f0f0f0;
     }
-
-    .product-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
+    
+    .button img {
+      width: 30px;
+      margin-right: 10px;
     }
   </style>
-  <script>
-    function showSection(sectionId) {
-      var sections = document.getElementsByClassName('section');
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].classList.remove('active');
-      }
-      
-      var section = document.getElementById(sectionId);
-      if (section) {
-        section.classList.add('active');
-      }
-    }
-  </script>
 </head>
 <body>
-  <h1>Каталог шкарпеток</h1>
-
-  <div class="section-buttons">
-    <button onclick="showSection('section1')">Жіночі</button>
-    <button onclick="showSection('section2')">Чоловічі</button>
-    <button onclick="showSection('section3')">Дитячі</button>
+  <div class="container">
+    <h1>Will you be my valentine?</h1>
+    <div class="buttons">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">
+        <img src="https://img.icons8.com/ios/50/000000/youtube-play.png">
+        Так!
+      </a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">
+        <img src="https://img.icons8.com/ios/50/000000/youtube-play.png">
+        Ні... 
+      </a>
+    </div>
   </div>
-
-  <div id="section1" class="section active">
-    <ul>
-      <li>
-        <img src="male1.webp" alt="Товар 1" class="product-image">
-         <span class="product-price">$10.00</span> Товар 1
-      </li>
-      <li>
-        <img src="male2.jpg" alt="Товар 2" class="product-image">
-         <span class="product-price">$20.00</span> Товар 2
-      </li>
-      <li>
-        <img src="male3.jpg" alt="Товар 3" class="product-image">
-         <span class="product-price">$30.00</span> Товар 3
-      </li>
-    </ul>
-  </div>
-  <div id="section2" class="section active">
-    <ul>
-      <li>
-        <img src="150x200.png" alt="Товар 4" class="product-image">
-         <span class="product-price">$40.00</span> Товар 4
-      </li>
-      <li>
-        <img src="150x200.png" alt="Товар 5" class="product-image">
-         <span class="product-price">$50.00</span> Товар 5
-      </li>
-      <li>
-        <img src="150x200.png" alt="Товар 6" class="product-image">
-         <span class="product-price">$60.00</span> Товар 6
-      </li>
-    </ul>
-  </div>
-  <div id="section3" class="section active">
-    <ul>
-      <li>
-        <img src="150x200.png" alt="Товар 7" class="product-image">
-         <span class="product-price">$70.00</span> Товар 7
-      </li>
-      <li>
-        <img src="150x200.png" alt="Товар 8" class="product-image">
-         <span class="product-price">$80.00</span> Товар 8
-      </li>
-      <li>
-        <img src="150x200.png" alt="Товар 9" class="product-image">
-         <span class="product-price">$90.00</span> Товар 9
-      </li>
-    </ul>
-  </div>
-
- 
+</body>
+</html>
