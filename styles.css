@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.text{
+    color: #ec4899; /* Equivalent to text-pink-500 */
+    font-size: 4rem; /* Equivalent to text-6xl */
+    font-weight: 800; /* Equivalent to font-extrabold */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.move-text {
+    transform: translate(65px, -10px);
+}
+
+.heart {
+    width: 125px;
+    height: 125px;
+    background-color: red;
+    mask:
+   radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+   radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+   linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    position: absolute;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.5s ease;
+}
+
+.heart::before {
+    left: 50%;
+}
+
+.heart::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
+}
+
+.heart:hover::before, .heart:hover::after {
+    background-color: transparent;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffb8c6, #f19cbb);
+    animation: gradientAnimation 2s ease infinite;
+    z-index: -1;
+}
+
+
+.background::before {
+    top: 30%;
+    left: 20%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.background::after {
+    top: 50%;
+    left: 40%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Animation for gradient background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Random positions for hearts */
+.heart:nth-child(1) { top: -5%; left: 50%; }
+.heart:nth-child(2) { top: 5%; left: 33%; }
+.heart:nth-child(3) { top: 20%; left: 20%; }
+.heart:nth-child(4) { top: 41%; left: 17%; }
+.heart:nth-child(7) { top: 62%; left: 25%; }
+.heart:nth-child(8) { top: 78%; left: 38%; }
+.heart:nth-child(5) { top: 5%; left: 67%; }
+.heart:nth-child(6) { top: 20%; left: 80%; }
+.heart:nth-child(11) { top: 41%; left: 83%; }
+.heart:nth-child(12) { top: 62%; left: 75%; }
+.heart:nth-child(9) { top: 78%; left: 63%; }
+.heart:nth-child(10) { top: 90%; left: 50%; }
